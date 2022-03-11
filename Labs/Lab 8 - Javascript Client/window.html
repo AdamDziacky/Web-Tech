@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SET08101 - Interacting with the Window</title>
+    </head>
+    <body>
+        <div id="output"></div>
+
+        <script>
+            var out = document.getElementById("output");
+            for(i=1; i<2000; i++)
+            {
+                out.innerHTML += i + " ";
+            }
+            window.scrollBy(0, 100);
+            
+        </script>
+    </body>
+</html>
