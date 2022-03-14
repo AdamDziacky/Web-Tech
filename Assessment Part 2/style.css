@@ -2,7 +2,7 @@
 /* Dropdown Button */
 .dropbtn 
 {
-    background-color: aquamarine;
+    background-color: rgb(144, 144, 144);
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -20,14 +20,17 @@
 {
     display: none;
     position: absolute;
-    background-color: black;
+    right: 0;
+    background-color: rgb(144, 144, 144);
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    font-size: 16px;
 }
 
 /* Links inside the dropdown */
-.dropdown-content a {
+.dropdown-content a 
+{
     color: black;
     padding: 12px 16px;
     text-decoration: none;
@@ -41,4 +44,42 @@
 .dropdown:hover .dropdown-content {display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.dropdown:hover .dropbtn {background-color: gray;}
+
+aside
+{
+    display: block;
+    width: 30%;
+    padding-left: 15px;
+    margin-left: 15px;
+    float: right;
+    font-style: italic;
+    background-color: lightgray;
+}
+
+header
+{
+    text-align: center;
+    background-color: #3cacac;
+    color: rgb(213, 213, 213);
+    font-size: 50px;
+}
+
+footer
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    align-content: center;
+    text-align: center;
+    background-color: gray;
+    color: black;
+} 
+
+h1, h2
+{
+    text-align: center;
+}
+
+
