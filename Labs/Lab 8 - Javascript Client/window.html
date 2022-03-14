@@ -7,13 +7,12 @@
         <div id="output"></div>
 
         <script>
-            var out = document.getElementById("output");
-            for(i=1; i<2000; i++)
-            {
-                out.innerHTML += i + " ";
-            }
-            window.scrollBy(0, 100);
-            
+           var out = document.getElementById("output");
+           out.innerHTML += "Href: " + window.location.href
+           + "<br>Protocol: " + window.location.protocol
+           + "<br>Host: " + window.location.host
+           + "<br>Path: " + window.location.pathname
+           + "<br>Hash: " + window.location.hash;
         </script>
     </body>
 </html>
