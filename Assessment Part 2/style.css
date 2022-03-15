@@ -9,12 +9,27 @@
     border: none;
 } */
 
+header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #3cacac;
+    color: rgb(213, 213, 213);
+    font-size: 50px;
+    font-family: ScriptMTBold;
+    z-index: 1;
+}
+
 .dropbtn 
 {
-    width: 35px;
-    height: 5px;
+    width: 30px;
+    height: 3px;
     background-color: black;
-    margin: 6px 0;
+    margin: 10px;
     cursor: pointer;
 }
 
@@ -55,37 +70,51 @@
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: gray;}
 
-aside
+.container
 {
+    margin-top: 100px;
+    position: static;
+    /* background-color: black; */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.content
+{
+    
+}
+
+.aside
+{
+    position: absolute;
+    display: flex;
+    right: 0;
     text-align: center;
     width: 10%;
-    padding-left: 15px;
-    margin-left: 15px;
     float: right;
     background-color: lightgray;
-    position: relative;
-    height: 100%;
+    z-index: 0;
 }
 
-header
+.progress-ul
 {
-    text-align: center;
-    background-color: #3cacac;
-    color: rgb(213, 213, 213);
-    font-size: 50px;
+    list-style: none;
 }
 
-footer
+.progress-ul-li
 {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    align-content: center;
-    text-align: center;
-    background-color: gray;
-    color: black;
-} 
+    padding: 10px 0px 10px 0px;
+    /* background-color: black; */
+}
+
+
+
+section
+{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
 
 h1, h2
 {
@@ -98,6 +127,47 @@ p
     margin-left: 15%;
     margin-right: 15%;
     text-align: center;
+}
+
+.footer-basic
+{
+    display: flex;
+    justify-content: center;
+    position:fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    text-align: center;
+    background-color: gray;
+    color: black;
+} 
+
+.list-inline
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.list-inline-item
+{
+    margin: 0px 15px 0px 15px;
+}
+
+.copyright
+{
+    text-align: center;
+}
+
+@font-face 
+{
+    font-family: ScriptMTBold;
+    src: url(ScriptMTBold.ttf) format('truetype');
+    font-weight: bold;
 }
 
 
