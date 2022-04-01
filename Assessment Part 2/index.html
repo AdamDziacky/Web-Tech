@@ -4,10 +4,12 @@
         <meta charset="UTF-8" />
         <title>Assessment Part 2 - Quiz Website</title>
         <link rel="stylesheet" href="style.css">
+        <!-- icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
     <body>
-        <header>
+        <header id="header">
             MovieQ
 
             <div class="dropdown" style="float:right;">
@@ -15,61 +17,99 @@
                 <div class="dropbtn"></div>
                 <div class="dropbtn"></div>
                 <div class="dropdown-content">
-                  <a href="blog.html">Blog</a>
-                  <a href="about.html">About Me</a>
-                  <a href="contact.html">Contact</a>
-                  <a href="leader.html">Leaderboard</a>
+                    <a href="index.html">Home Page</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="about.html">About Me</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="leader.html">Leaderboard</a>
                 </div>
-              </div>
+            </div>
         </header>
 
         <!-- Modified from: https://www.w3schools.com/howto/howto_css_dropdown.asp -->
-            
-        <div class="container">
+        
+        <div class="page-content">
             <div class="aside">
-
                 <aside>
-                    <ul class="progress-ul">
+                    <ul id="progress-ul">
                     <li class="progress-ul-li">Question 1</li>
-                    <li class="progress-ul-li">Question 1</li>
-                    <li class="progress-ul-li">Question 1</li>
-                    <li class="progress-ul-li">Question 1</li>
-                    <li class="progress-ul-li">Question 1</li>
-                    <li class="progress-ul-li">Question 1</li>
-                    <li class="progress-ul-li">Question 1</li>
-                    <li class="progress-ul-li">Question 1</li>
-                    <li class="progress-ul-li">Question 1</li>
-                    <li class="progress-ul-li">Question 1</li>
+                    <li class="progress-ul-li">Question 2</li>
+                    <li class="progress-ul-li">Question 3</li>
+                    <li class="progress-ul-li">Question 4</li>
+                    <li class="progress-ul-li">Question 5</li>
+                    <li class="progress-ul-li">Question 6</li>
+                    <li class="progress-ul-li">Question 7</li>
+                    <li class="progress-ul-li">Question 8</li>
+                    <li class="progress-ul-li">Question 0</li>
+                    <li class="progress-ul-li">Question 10</li>
                 </ul>
             </aside>
             </div>
             
             <div class="content">
                 <h1>Best Quiz website in progress..</h1>
-                <p>
+                <p id="intro">
                     Do you consider yourself a movie addict / maniac / enthusiast? Many people do but not 
                     many of them really are. This is your chance to prove yourself worthy of that nickname. 
                     Ahead of you is the series of 10 questions featuring some of most famous movies of all 
                     times. The sooner you answer, the more points you get. Are you ready?
                 </p>
-                <h2>Question.....................................?</h2> </hgroup>
-            </div>
 
+                <!-- Modified from   https://simplestepscode.com/javascript-quiz-tutorial/ and -->
+                <div class="quiz-container">
+
+                    <div id="Q3-HP-Pic">
+                        <img src="HP_Pic.jpg" alt="HP Deathly Hallows">
+                    </div>
+                    <div id="Q5-Wilson">
+                        <img src="Wilson.jpg" alt="Cast Away Wilson">
+                    </div>
+                    <div id="Q9-Angry-Men">
+                        <img src="Angry_Men.jpg" alt="12 Angry Men">
+                    </div>
+
+                    <div id="Q2-LOTR-audio">
+                        
+                        <audio id="audio_control" autoplay loop controls style="z-index: 999;">
+                            <source src="gandalf_shallnotpass.mp3" type="audio/mp3">
+                            Your browser does not support audio element.
+                        </audio>
+                    </div>
+
+                    <div id="Q7-HP-Hagrid">
+                        <audio id="audio_control" autoplay loop controls>
+                            <source src="you're-a-wizard-harry.mp3" type="audio/mp3">
+                            Your browser does not support audio element.
+                        </audio>
+                    </div>
+
+                    <div id="quiz"></div>
+                  </div>
+                  <button id="previous">Previous Question</button>
+                  <button id="next">Next Question</button>
+                  <button id="submit">Submit Quiz</button>
+                  <div id="results"></div>
+                    
+            </div>
         </div>
 
         <div class="footer-basic">
+            <script src="JS.js"></script>
+            
             <footer>
-                <!-- <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div> -->
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-instagram"></a>
+
                 <ul class="list-inline">
-                    <li class="list-inline-item"><a href="#">Home</a></li>
-                    <li class="list-inline-item"><a href="#">Services</a></li>
-                    <li class="list-inline-item"><a href="#">About</a></li>
-                    <li class="list-inline-item"><a href="#">Terms</a></li>
-                    <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                    <li class="list-inline-item"><a href="blog.html">Blog</a></li>
+                    <li class="list-inline-item"><a href="about.html">About Me</a></li>
+                    <li class="list-inline-item"><a href="index.html">Home</a></li>
+                    <li class="list-inline-item"><a href="contact.html">Contact</a></li>
+                    <li class="list-inline-item"><a href="leader.html">Leaderboard</a></li>
                 </ul>
                 <p class="copyright">Company Name © 2018</p>
             </footer>
         </div>
-
     </body>
 </html>

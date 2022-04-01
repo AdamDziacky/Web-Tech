@@ -9,6 +9,14 @@
     border: none;
 } */
 
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:300,600);
+@font-face 
+{
+    font-family: ScriptMTBold;
+    src: url(ScriptMTBold.ttf) format('truetype');
+    font-weight: bold;
+}
+
 header
 {
     position: fixed;
@@ -44,6 +52,7 @@ header
 {
     display: none;
     position: absolute;
+    font-family: 'Work Sans', sans-serif;
     right: 0;
     background-color: rgb(144, 144, 144);
     min-width: 160px;
@@ -70,19 +79,33 @@ header
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: gray;}
 
-.container
+section
 {
     margin-top: 100px;
-    position: static;
+    margin-bottom: 100px;
+}
+
+h1, h2
+{
+    text-align: center;
+}
+
+p
+{
+    font-size: large;
+    margin-left: 15%;
+    margin-right: 15%;
+    text-align: center;
+}
+
+.page-content
+{
+    margin-top: 100px;
+    position: relative;
     /* background-color: black; */
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-}
-
-.content
-{
-    
 }
 
 .aside
@@ -109,39 +132,150 @@ header
 }
 
 
-
-section
-{
-    margin-top: 100px;
-    margin-bottom: 100px;
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    /* background-color: blue; */
+    padding: 20px;
 }
 
-h1, h2
-{
+.grid-item {
+    background-color: rgba(255,255,255,0.8);
+    border: 1px solid rgba(0,0,0,0.4);
+    padding: 10px;
+    font-size: 30px;
     text-align: center;
 }
 
-p
-{
-    font-size: large;
-    margin-left: 15%;
-    margin-right: 15%;
-    text-align: center;
+
+
+/* modified from simplestepcode.com/javascript-quiz-tutorial/ */
+
+body{
+	font-size: 20px;
+	font-family: 'Work Sans', sans-serif;
+	color: #333;
+  font-weight: 300;
+  text-align: center;
+  background-color: #f8f6f0;
+}
+h1{
+  font-weight: 300;
+  margin: 0px;
+  padding: 10px;
+  font-size: 20px;
+  background-color: #444;
+  color: #fff;
+}
+.question{
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.answers {
+  margin-bottom: 20px;
+  text-align: left;
+  display: inline-block;
+}
+.answers label{
+  display: block;
+  margin-bottom: 10px;
+}
+button{
+  font-family: 'Work Sans', sans-serif;
+	font-size: 22px;
+	background-color: #3cacac;
+	color: #fff;
+	border: 0px;
+	border-radius: 3px;
+	padding: 20px;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+button:hover{
+	background-color: #2a7e7e;
+}
+
+.slide{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.active-slide{
+  opacity: 1;
+  z-index: 2;
+}
+.quiz-container{
+  position: relative;
+  height: 200px;
+  margin-top: 40px;
 }
 
 .footer-basic
 {
     display: flex;
     justify-content: center;
-    position:fixed;
+    position:absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 60px;
     text-align: center;
     background-color: gray;
     color: black;
 } 
+
+a:link {
+    color: #ffffff;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: #ffffff;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: #389f9f;;
+  }
+
+/* Icons in the footer - social media */
+.fa 
+{
+    padding: 10px;
+    font-size: 20px;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+}
+
+.fa:hover 
+{
+    opacity: 0.7;
+}
+
+.fa-facebook 
+{
+    background: #3B5998;
+    color: white;
+}
+
+.fa-instagram 
+{
+    /* background: #125688; */
+    background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
+    color: white;
+}
+
+.fa-twitter 
+{
+    background: #55ACEE;
+    color: white;
+}
 
 .list-inline
 {
@@ -161,13 +295,6 @@ p
 .copyright
 {
     text-align: center;
-}
-
-@font-face 
-{
-    font-family: ScriptMTBold;
-    src: url(ScriptMTBold.ttf) format('truetype');
-    font-weight: bold;
 }
 
 
