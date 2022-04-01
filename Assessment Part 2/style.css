@@ -169,8 +169,13 @@ h1{
 }
 .question{
   font-size: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
+/* .attachment{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    z-index: 10;
+} */
 .answers {
   margin-bottom: 20px;
   text-align: left;
@@ -210,6 +215,7 @@ button:hover{
 }
 .quiz-container{
   position: relative;
+  display: flex;
   height: 200px;
   margin-top: 40px;
 }

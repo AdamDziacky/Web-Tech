@@ -25,17 +25,26 @@
         }
 
         // add this question and its answers to the output
+        console.log(currentQuestion.attachment);
         output.push(
           `<div class="slide">
             <div class="question"> ${currentQuestion.question} </div>
+            <div id="attachment"></div>
             <div class="answers"> ${answers.join("")} </div>
           </div>`
         );
       }
     );
-
+    
     // finally combine our output list into one string of HTML and put it on the page
     quizContainer.innerHTML = output.join('');
+
+    var elem = document.createElement("img");
+    elem.setAttribute("src", currentQuestion.attachment);
+    elem.setAttribute("height", "300");
+    elem.setAttribute("width", "300");
+    elem.setAttribute("alt", "Not working");
+    document.getElementById("attachment").appendChild(elem);
   }
 
   function showResults(){
@@ -93,16 +102,18 @@
       submitButton.style.display = 'none';
     }
 
-    showQuestionAttachments();
+    // showQuestionAttachments();
   }
 
   function showNextSlide() {
     progress_list[currentSlide].style.textDecoration = "line-through";
+    hideQuestionAttachments();
     showSlide(currentSlide + 1);
   }
   
   function showPreviousSlide() {
     progress_list[currentSlide - 1].style.textDecoration = "initial";
+    hideQuestionAttachments();
     showSlide(currentSlide - 1);
   }
 
@@ -117,9 +128,19 @@
   function showQuestionAttachments(){
     if(currentSlide === 1){
       Q2Audio.style.display = "inherit";
+      // console.log("Displaying Q2 Attachment.");
     }
-    else{
-      hideQuestionAttachments();
+    if(currentSlide === 2){
+      Q3Pic.style.display = "inherit";
+    }
+    if(currentSlide === 4){
+      Q5Pic.style.display = "inherit";
+    }
+    if(currentSlide === 6){
+      Q7Audio.style.display = "inherit";
+    }
+    if(currentSlide === 8){
+      Q9Pic.style.display = "inherit";
     }
   }
 
@@ -127,14 +148,23 @@
   const quizContainer = document.getElementById('quiz');
   const resultsContainer = document.getElementById('results');
   const submitButton = document.getElementById('submit');
+
+  var progress_list = document.getElementsByClassName("progress-ul-li");
+  var Q3Pic = document.getElementById("Q3-HP-Pic");
+  var Q5Pic = document.getElementById("Q5-Wilson");
+  var Q9Pic = document.getElementById("Q9-Angry-Men");
+  var Q2Audio = document.getElementById("Q2-LOTR-audio");
+  var Q7Audio = document.getElementById("Q7-HP-Hagrid");
+
   const myQuestions = [
     {
-      question: "I am going to make him an ??? he can't refuse. In what movie did this line appear?",
+      question: "I am going to make him an offer he can't refuse. <br> In what movie did this line appear?",
       answers: {
         a: "The Godfather",
         b: "Scarface",
         c: "Casino Royale"
       },
+      attachment: null,
       correctAnswer: "a"
     },
     {
@@ -144,18 +174,40 @@
         b: "Sauron",
         c: "Gandalf the Grey"
       },
+      attachment: Q2Audio,
       correctAnswer: "c"
     },
     {
-      question: "Which tool can you use to ensure code quality?",
+      question: "What is on the picture?",
       answers: {
-        a: "Angular",
-        b: "jQuery",
-        c: "RequireJS",
-        d: "ESLint"
+        a: "Geometrical shapes",
+        b: "Deathly Hallows",
+        c: "Illuminati sign",
       },
-      correctAnswer: "d"
-    }
+      attachment: "Q3-HP-Pic",
+      correctAnswer: "b"
+    },
+    {
+      question: "Ever have that feeling when you're not sure if you're awake or dreaming? <br> What movie did this line appear in?",
+      answers: {
+        a: "Inception",
+        b: "The Matrix",
+        c: "Requiem for a Dream",
+      },
+      attachment: null,
+      correctAnswer: "b"
+    },
+    {
+      question: "What is the name of the thing on the picture?",
+      answers: {
+        a: "Todd",
+        b: "Jack",
+        c: "Wilson",
+      },
+      attachment: Q5Pic,
+      correctAnswer: "c"
+    },
+    
   ];
 
   // Kick things off
@@ -166,13 +218,6 @@
   const nextButton = document.getElementById("next");
   const slides = document.querySelectorAll(".slide");
   let currentSlide = 0;
-
-  var progress_list = document.getElementsByClassName("progress-ul-li");
-  var Q3Pic = document.getElementById("Q3-HP-Pic");
-  var Q5Pic = document.getElementById("Q5-Wilson");
-  var Q9Pic = document.getElementById("Q9-Angry-Men");
-  var Q2Audio = document.getElementById("Q2-LOTR-audio");
-  var Q7Audio = document.getElementById("Q7-HP-Hagrid");
   
   // Show the first slide
   hideQuestionAttachments();
