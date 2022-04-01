@@ -29,7 +29,7 @@
         output.push(
           `<div class="slide">
             <div class="question"> ${currentQuestion.question} </div>
-            <div id="attachment"></div>
+            <div id="attachment"> ${currentQuestion.attachment}</div>
             <div class="answers"> ${answers.join("")} </div>
           </div>`
         );
@@ -39,12 +39,12 @@
     // finally combine our output list into one string of HTML and put it on the page
     quizContainer.innerHTML = output.join('');
 
-    var elem = document.createElement("img");
-    elem.setAttribute("src", currentQuestion.attachment);
-    elem.setAttribute("height", "300");
-    elem.setAttribute("width", "300");
-    elem.setAttribute("alt", "Not working");
-    document.getElementById("attachment").appendChild(elem);
+    // var elem = document.createElement("img");
+    // elem.setAttribute("src", currentQuestion.attachment);
+    // elem.setAttribute("height", "300");
+    // elem.setAttribute("width", "300");
+    // elem.setAttribute("alt", "Not working");
+    // document.getElementById("attachment").appendChild(elem);
   }
 
   function showResults(){
