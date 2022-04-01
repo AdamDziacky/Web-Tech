@@ -92,12 +92,13 @@
       nextButton.style.display = 'inline-block';
       submitButton.style.display = 'none';
     }
+
+    showQuestionAttachments();
   }
 
   function showNextSlide() {
     progress_list[currentSlide].style.textDecoration = "line-through";
     showSlide(currentSlide + 1);
-    console.log("Cross?");
   }
   
   function showPreviousSlide() {
@@ -111,6 +112,15 @@
     Q9Pic.style.display = "none";
     Q2Audio.style.display = "none";
     Q7Audio.style.display = "none";
+  }
+
+  function showQuestionAttachments(){
+    if(currentSlide === 1){
+      Q2Audio.style.display = "inherit";
+    }
+    else{
+      hideQuestionAttachments();
+    }
   }
 
   //variables
@@ -128,11 +138,11 @@
       correctAnswer: "a"
     },
     {
-      question: "Which one of these is a JavaScript package manager?",
+      question: "Which character said the this line?",
       answers: {
-        a: "Node.js",
-        b: "TypeScript",
-        c: "npm"
+        a: "Frodo Baggins",
+        b: "Sauron",
+        c: "Gandalf the Grey"
       },
       correctAnswer: "c"
     },
