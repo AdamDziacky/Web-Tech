@@ -25,11 +25,11 @@
         }
 
         // add this question and its answers to the output
-        console.log(currentQuestion.attachment);
+        // console.log(currentQuestion.attachment);
         output.push(
           `<div class="slide">
             <div class="question"> ${currentQuestion.question} </div>
-            <div id="attachment"> ${currentQuestion.attachment}</div>
+            <!-- <div id="attachment"> ${currentQuestion.attachment}</div> -->
             <div class="answers"> ${answers.join("")} </div>
           </div>`
         );
@@ -102,7 +102,7 @@
       submitButton.style.display = 'none';
     }
 
-    // showQuestionAttachments();
+    showQuestionAttachments();
   }
 
   function showNextSlide() {
@@ -184,8 +184,28 @@
         b: "Deathly Hallows",
         c: "Illuminati sign",
       },
-      attachment: "Q3-HP-Pic",
+      attachment: Q3Pic,
       correctAnswer: "b"
+    },
+    {
+      question: "Which movie takes place in a Gotham City?",
+      answers: {
+        a: "The Dark Knight",
+        b: "Daredevil",
+        c: "Suicide Squad",
+      },
+      attachment: null,
+      correctAnswer: "a"
+    },
+    {
+      question: "What is the name of the thing on the picture?",
+      answers: {
+        a: "Todd",
+        b: "Jack",
+        c: "Wilson",
+      },
+      attachment: Q5Pic,
+      correctAnswer: "c"
     },
     {
       question: "Ever have that feeling when you're not sure if you're awake or dreaming? <br> What movie did this line appear in?",
@@ -198,16 +218,45 @@
       correctAnswer: "b"
     },
     {
-      question: "What is the name of the thing on the picture?",
+      question: "What was the job of the person saying these words?",
       answers: {
-        a: "Todd",
-        b: "Jack",
-        c: "Wilson",
+        a: "Headmaster",
+        b: "Gamekeeper",
+        c: "Auror",
       },
-      attachment: Q5Pic,
+      attachment: Q7Audio,
+      correctAnswer: "b"
+    },
+    {
+      question: "What was the first horrow movie to win an Oscar??",
+      answers: {
+        a: "The Ring",
+        b: "Psycho",
+        c: "Silence of the lambs",
+      },
+      attachment: null,
       correctAnswer: "c"
     },
-    
+    {
+      question: "In which movie can you find this scene?",
+      answers: {
+        a: "It's a wonderful life",
+        b: "12 Angry Men",
+        c: "Casablanca",
+      },
+      attachment: Q9Pic,
+      correctAnswer: "b"
+    },
+    {
+      question: "What is the name of the villain in the movie Schindler's List?",
+      answers: {
+        a: "Mads Mikkelsen",
+        b: "Ralph Fiennes",
+        c: "Anthony Hopkings",
+      },
+      attachment: null,
+      correctAnswer: "a"
+    }
   ];
 
   // Kick things off
