@@ -26,11 +26,12 @@
 
         // add this question and its answers to the output
         // console.log(currentQuestion.attachment);
+        //instead of generating new slide every time, try to create just one, then access it and change the content.
         output.push(
           `<div class="slide">
-            <div class="question"> ${currentQuestion.question} </div>
-            <!-- <div id="attachment"> ${currentQuestion.attachment}</div> -->
-            <div class="answers"> ${answers.join("")} </div>
+            <p class="question"> ${currentQuestion.question} </p>
+            <div id="attachment">
+            <p class="answers"> ${answers.join("")} </p>
           </div>`
         );
       }
@@ -38,13 +39,6 @@
     
     // finally combine our output list into one string of HTML and put it on the page
     quizContainer.innerHTML = output.join('');
-
-    // var elem = document.createElement("img");
-    // elem.setAttribute("src", currentQuestion.attachment);
-    // elem.setAttribute("height", "300");
-    // elem.setAttribute("width", "300");
-    // elem.setAttribute("alt", "Not working");
-    // document.getElementById("attachment").appendChild(elem);
   }
 
   function showResults(){
@@ -102,46 +96,69 @@
       submitButton.style.display = 'none';
     }
 
-    showQuestionAttachments();
+    // showQuestionAttachments();
   }
 
   function showNextSlide() {
     progress_list[currentSlide].style.textDecoration = "line-through";
-    hideQuestionAttachments();
+    // hideQuestionAttachments();
     showSlide(currentSlide + 1);
   }
   
   function showPreviousSlide() {
     progress_list[currentSlide - 1].style.textDecoration = "initial";
-    hideQuestionAttachments();
+    // hideQuestionAttachments();
     showSlide(currentSlide - 1);
   }
 
   function hideQuestionAttachments(){
-    Q3Pic.style.display = "none";
-    Q5Pic.style.display = "none";
-    Q9Pic.style.display = "none";
-    Q2Audio.style.display = "none";
-    Q7Audio.style.display = "none";
+    // Q3Pic.style.display = "none";
+    // Q5Pic.style.display = "none";
+    // Q9Pic.style.display = "none";
+    // Q2Audio.style.display = "none";
+    // Q7Audio.style.display = "none";
   }
 
   function showQuestionAttachments(){
-    if(currentSlide === 1){
-      Q2Audio.style.display = "inherit";
-      // console.log("Displaying Q2 Attachment.");
+    // if(currentSlide === 1){
+    //   Q2Audio.style.display = "inherit";
+    //   // console.log("Displaying Q2 Attachment.");
+    // }
+    // if(currentSlide === 2){
+    //   Q3Pic.style.display = "inherit";
+    // }
+    // if(currentSlide === 4){
+    //   Q5Pic.style.display = "inherit";
+    // }
+    // if(currentSlide === 6){
+    //   Q7Audio.style.display = "inherit";
+    // }
+    // if(currentSlide === 8){
+    //   Q9Pic.style.display = "inherit";
+    // }
+  }
+
+  function showQuestionAttachmentsJS(questionNumber){
+
+    var img = document.createElement("img");
+    img.setAttribute("height", "300px");
+    img.setAttribute("width", "300px");
+    img.setAttribute("alt", "Question Attachment");
+
+    if(questionNumber == 2){
+      img.src = "HP_Pic.jpg";
     }
-    if(currentSlide === 2){
-      Q3Pic.style.display = "inherit";
+
+    if(questionNumber == 4){
+      img.src = "Wilson.jpg";
     }
-    if(currentSlide === 4){
-      Q5Pic.style.display = "inherit";
+
+    if(questionNumber == 8){
+      img.src = "Angry_Men.jpg";
     }
-    if(currentSlide === 6){
-      Q7Audio.style.display = "inherit";
-    }
-    if(currentSlide === 8){
-      Q9Pic.style.display = "inherit";
-    }
+
+    var attachment_space = document.getElementById("attachment");
+    attachment_space.appendChild(img)
   }
 
   //variables
@@ -150,11 +167,12 @@
   const submitButton = document.getElementById('submit');
 
   var progress_list = document.getElementsByClassName("progress-ul-li");
-  var Q3Pic = document.getElementById("Q3-HP-Pic");
-  var Q5Pic = document.getElementById("Q5-Wilson");
-  var Q9Pic = document.getElementById("Q9-Angry-Men");
-  var Q2Audio = document.getElementById("Q2-LOTR-audio");
-  var Q7Audio = document.getElementById("Q7-HP-Hagrid");
+  // var Q3Pic = document.getElementById("Q3-HP-Pic");
+  // var Q5Pic = document.getElementById("Q5-Wilson");
+  // var Q9Pic = document.getElementById("Q9-Angry-Men");
+  // var Q2Audio = document.getElementById("Q2-LOTR-audio");
+  // var Q7Audio = document.getElementById("Q7-HP-Hagrid");
+  
 
   const myQuestions = [
     {
@@ -174,7 +192,7 @@
         b: "Sauron",
         c: "Gandalf the Grey"
       },
-      attachment: Q2Audio,
+      // attachment: Q2Audio,
       correctAnswer: "c"
     },
     {
@@ -184,7 +202,7 @@
         b: "Deathly Hallows",
         c: "Illuminati sign",
       },
-      attachment: Q3Pic,
+      // attachment: Q3Pic,
       correctAnswer: "b"
     },
     {
@@ -204,7 +222,7 @@
         b: "Jack",
         c: "Wilson",
       },
-      attachment: Q5Pic,
+      // attachment: Q5Pic,
       correctAnswer: "c"
     },
     {
@@ -214,7 +232,7 @@
         b: "The Matrix",
         c: "Requiem for a Dream",
       },
-      attachment: null,
+      // attachment: null,
       correctAnswer: "b"
     },
     {
@@ -224,7 +242,7 @@
         b: "Gamekeeper",
         c: "Auror",
       },
-      attachment: Q7Audio,
+      // attachment: Q7Audio,
       correctAnswer: "b"
     },
     {
@@ -234,7 +252,7 @@
         b: "Psycho",
         c: "Silence of the lambs",
       },
-      attachment: null,
+      // attachment: null,
       correctAnswer: "c"
     },
     {
@@ -244,7 +262,7 @@
         b: "12 Angry Men",
         c: "Casablanca",
       },
-      attachment: Q9Pic,
+      // attachment: Q9Pic,
       correctAnswer: "b"
     },
     {
@@ -254,7 +272,7 @@
         b: "Ralph Fiennes",
         c: "Anthony Hopkings",
       },
-      attachment: null,
+      // attachment: null,
       correctAnswer: "a"
     }
   ];
@@ -269,7 +287,7 @@
   let currentSlide = 0;
   
   // Show the first slide
-  hideQuestionAttachments();
+  // hideQuestionAttachments();
   showSlide(currentSlide);
   
   // Event listeners
