@@ -25,12 +25,38 @@
           }
   
           // add this question and its answers to the output
-          output.push(
-            `<div class="slide">
-              <div class="question"> ${currentQuestion.question} </div>
-              <div class="answers"> ${answers.join("")} </div>
-            </div>`
-          );
+          if (currentQuestion.att_type == "N/A") {
+            output.push(
+              `<div class="slide">
+                <div class="question"> ${currentQuestion.question} </div>
+                <div class="answers"> ${answers.join("")} </div>
+              </div>`
+            );
+          }
+
+          if (currentQuestion.att_type == "Image") {
+            output.push(
+              `<div class="slide">
+                <div class="question"> ${currentQuestion.question} </div>
+                <img src="${currentQuestion.att}" alt="Question Image" style="width:300px;height:300px;">
+                <div class="answers"> ${answers.join("")} </div>
+              </div>`
+            );
+          }          
+
+          if (currentQuestion.att_type == "Audio") {
+            output.push(
+              `<div class="slide">
+                <div class="question"> ${currentQuestion.question} </div>
+                <audio controls>
+                  <source src="${currentQuestion.att}" type="audio/mp3">
+                  <source src="${currentQuestion.att}" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+                <div class="answers"> ${answers.join("")} </div>
+              </div>`
+            );
+          }          
         }
       );
   
@@ -113,6 +139,7 @@
             b: "Scarface",
             c: "Casino Royale"
           },
+          att_type: "N/A",
           correctAnswer: "a"
         },
         {
@@ -122,6 +149,8 @@
             b: "Sauron",
             c: "Gandalf the Grey"
           },
+          att_type: "Audio",
+          att: "gandalf_shallnotpass.mp3",
           correctAnswer: "c"
         },
         {
@@ -131,6 +160,8 @@
             b: "Deathly Hallows",
             c: "Illuminati sign",
           },
+          att_type: "Image",
+          att: "HP_Pic.jpg",
           correctAnswer: "b"
         },
         {
@@ -140,6 +171,7 @@
             b: "Daredevil",
             c: "Suicide Squad",
           },
+          att_type: "N/A",
           correctAnswer: "a"
         },
         {
@@ -149,6 +181,8 @@
             b: "Jack",
             c: "Wilson",
           },
+          att_type: "Image",
+          att: "Wilson.jpg",
           correctAnswer: "c"
         },
         {
@@ -158,6 +192,7 @@
             b: "The Matrix",
             c: "Requiem for a Dream",
           },
+          att_type: "N/A",
           correctAnswer: "b"
         },
         {
@@ -167,6 +202,8 @@
             b: "Gamekeeper",
             c: "Auror",
           },
+          att_type: "Audio",
+          att: "wizzard.mp3",
           correctAnswer: "b"
         },
         {
@@ -176,6 +213,7 @@
             b: "Psycho",
             c: "Silence of the lambs",
           },
+          att_type: "N/A",
           correctAnswer: "c"
         },
         {
@@ -185,6 +223,8 @@
             b: "12 Angry Men",
             c: "Casablanca",
           },
+          att_type: "Image",
+          att: "Angry_Men.jpg",
           correctAnswer: "b"
         },
         {
@@ -194,6 +234,7 @@
             b: "Ralph Fiennes",
             c: "Anthony Hopkings",
           },
+          att_type: "N/A",
           correctAnswer: "a"
         }
       ];
