@@ -123,10 +123,12 @@
     }
   
     function showNextSlide() {
+      progress_list[currentSlide].style.textDecoration = "line-through";
       showSlide(currentSlide + 1);
     }
   
     function showPreviousSlide() {
+      progress_list[currentSlide - 1].style.textDecoration = "initial";
       showSlide(currentSlide - 1);
     }
   
@@ -134,6 +136,7 @@
     const quizContainer = document.getElementById('quiz');
     const resultsContainer = document.getElementById('results');
     const submitButton = document.getElementById('submit');
+    var progress_list = document.getElementsByClassName("progress-ul-li");
     const myQuestions = [
         {
           question: "I am going to make him an offer he can't refuse. <br> In what movie did this line appear?",

@@ -98,24 +98,20 @@ body{
 
 .aside
 {
-    position: absolute;
+    /* position: absolute;
     display: flex;
     right: 0;
-    text-align: center;
+    text-align: center; */
     width: 10%;
     float: right;
     background-color: lightgray;
-    z-index: 0;
-}
-
-.progress-ul
-{
-    list-style: none;
+    /* z-index: 0; */
 }
 
 .progress-ul-li
 {
     padding: 10px 0px 10px 0px;
+    list-style: none;
     /* background-color: black; */
 }
 
@@ -126,6 +122,10 @@ h1{
   font-size: 20px;
   background-color: #444;
   color: #fff;
+}
+
+p{
+  width: 90%;
 }
 
 /* QUIZ */
