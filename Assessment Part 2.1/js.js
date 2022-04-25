@@ -29,6 +29,7 @@
             output.push(
               `<div class="slide">
                 <div class="question"> ${currentQuestion.question} </div>
+                <br>
                 <div class="answers"> ${answers.join("")} </div>
               </div>`
             );
@@ -48,11 +49,13 @@
             output.push(
               `<div class="slide">
                 <div class="question"> ${currentQuestion.question} </div>
+                <br>
                 <audio controls>
                   <source src="${currentQuestion.att}" type="audio/mp3">
                   <source src="${currentQuestion.att}" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
+                <br>
                 <div class="answers"> ${answers.join("")} </div>
               </div>`
             );

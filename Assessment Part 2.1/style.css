@@ -1,5 +1,92 @@
 @import url(https://fonts.googleapis.com/css?family=Work+Sans:300,600);
+/* Design from dropdown menu adapted from https://www.w3schools.com/howto/howto_css_dropdown.asp */
+/* Dropdown Button */
+/* .dropbtn 
+{
+    background-color: rgb(144, 144, 144);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+} */
 
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:300,600);
+@font-face 
+{
+    font-family: ScriptMTBold;
+    src: url(ScriptMTBold.ttf) format('truetype');
+    font-weight: bold;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* HEADER */
+header
+{
+    /* position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center; */
+    background-color: #3cacac;
+    color: rgb(213, 213, 213);
+    font-size: 50px;
+    font-family: ScriptMTBold;
+    z-index: 2;
+}
+
+.dropbtn 
+{
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    margin: 10px;
+    cursor: pointer;
+}
+
+/* The container <div> - needed for positioning content */
+.dropdown 
+{
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content
+{
+    display: none;
+    position: absolute;
+    font-family: 'Work Sans', sans-serif;
+    right: 0;
+    background-color: rgb(144, 144, 144);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    font-size: 16px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: gray;}
+
+/* modified from simplestepcode.com/javascript-quiz-tutorial/ */
 body{
 	font-size: 20px;
 	font-family: 'Work Sans', sans-serif;
@@ -8,6 +95,30 @@ body{
   text-align: center;
   background-color: #f8f6f0;
 }
+
+.aside
+{
+    position: absolute;
+    display: flex;
+    right: 0;
+    text-align: center;
+    width: 10%;
+    float: right;
+    background-color: lightgray;
+    z-index: 0;
+}
+
+.progress-ul
+{
+    list-style: none;
+}
+
+.progress-ul-li
+{
+    padding: 10px 0px 10px 0px;
+    /* background-color: black; */
+}
+
 h1{
   font-weight: 300;
   margin: 0px;
@@ -16,6 +127,8 @@ h1{
   background-color: #444;
   color: #fff;
 }
+
+/* QUIZ */
 .question{
   font-size: 30px;
   margin-bottom: 10px;
@@ -59,6 +172,91 @@ button:hover{
 }
 .quiz-container{
   position: relative;
-  height: 200px;
   margin-top: 40px;
 }
+
+
+/* FOOTER */
+.footer-basic
+{
+    /* display: flex;
+    justify-content: center;
+    text-align: center;
+    color: black;
+    position:absolute; */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: gray;
+} 
+
+a:link {
+    color: #ffffff;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: #ffffff;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: #389f9f;;
+  }
+
+/* Icons in the footer - social media */
+.fa 
+{
+    padding: 10px;
+    font-size: 20px;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+}
+
+.fa:hover 
+{
+    opacity: 0.7;
+}
+
+.fa-facebook 
+{
+    background: #3B5998;
+    color: white;
+}
+
+.fa-instagram 
+{
+    /* background: #125688; */
+    background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
+    color: white;
+}
+
+.fa-twitter 
+{
+    background: #55ACEE;
+    color: white;
+}
+
+.list-inline
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.list-inline-item
+{
+    margin: 0px 15px 0px 15px;
+}
+
+.copyright
+{
+    text-align: center;
+}
+
