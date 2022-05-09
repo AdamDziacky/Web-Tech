@@ -1,5 +1,6 @@
 (function(){
     // Functions
+
     function buildQuiz(){
       // variable to store the HTML output
       const output = [];
@@ -40,6 +41,7 @@
               `<div class="slide">
                 <div class="question"> ${currentQuestion.question} </div>
                 <img src="${currentQuestion.att}" alt="Question Image" style="width:300px;height:300px;">
+                <br>
                 <div class="answers"> ${answers.join("")} </div>
               </div>`
             );
@@ -55,6 +57,7 @@
                   <source src="${currentQuestion.att}" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
+                <br>
                 <br>
                 <div class="answers"> ${answers.join("")} </div>
               </div>`
@@ -131,12 +134,39 @@
       progress_list[currentSlide - 1].style.textDecoration = "initial";
       showSlide(currentSlide - 1);
     }
+
+    // after clicking start button
+    function welcomeMessage()
+    {
+      // Get users name
+      username = document.getElementById('name').value;
+      msg = "Hi " + username + ". Do you consider yourself a movie addict / maniac / enthusiast? Many people do but not many of them really are. This is your chance to prove yourself worthy of that nickname. Ahead of you is the series of 10 questions featuring some of most famous movies of all times. The sooner you answer, the more points you get. Are you ready?" 
+      document.getElementById('intro').innerHTML = msg;
+      
+      // Hide the form
+      document.getElementById('welcomeForm').style.display = "none";
+      document.getElementById('start').style.display = "none";
+      document.getElementById('continue').style.display = "inline-block";
+    }
+
+    // after clicking continue button
+    function startQuiz()
+    {
+      showSlide(currentSlide);
+      continueButton.style.display = 'none';
+      nextButton.style.display = 'inline-block';
+      document.getElementById('intro').style.display = 'none';
+      document.getElementById('welcomeDiv').style.display = 'none';
+    }
   
     // Variables
     const quizContainer = document.getElementById('quiz');
     const resultsContainer = document.getElementById('results');
     const submitButton = document.getElementById('submit');
+    const startButton = document.getElementById('start');
+    const continueButton = document.getElementById('continue');
     var progress_list = document.getElementsByClassName("progress-ul-li");
+
     const myQuestions = [
         {
           question: "I am going to make him an offer he can't refuse. <br> In what movie did this line appear?",
@@ -247,19 +277,26 @@
   
     // Kick things off
     buildQuiz();
-  
+   
     // Pagination
     const previousButton = document.getElementById("previous");
     const nextButton = document.getElementById("next");
     const slides = document.querySelectorAll(".slide");
     let currentSlide = 0;
   
-    // Show the first slide
-    showSlide(currentSlide);
+    // // Show the first slide
+    // showSlide(currentSlide);
   
     // Event listeners
     submitButton.addEventListener('click', showResults);
     previousButton.addEventListener("click", showPreviousSlide);
     nextButton.addEventListener("click", showNextSlide);
+    startButton.addEventListener('click', welcomeMessage);
+    continueButton.addEventListener('click', startQuiz);
+
+    submitButton.style.display = 'none';
+    previousButton.style.display = 'none';
+    nextButton.style.display = 'none';
+    continueButton.style.display = 'none';
   })();
   

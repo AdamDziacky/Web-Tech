@@ -126,6 +126,11 @@ body{
     list-style: none;
     /* background-color: black; */
 }
+p
+{
+  margin-left: 10px;
+  margin-right: 10px;
+}
 
 h1{
   position: relative;
@@ -285,4 +290,3 @@ a:link {
     text-align: center;
     width: 100%;
 }
-
