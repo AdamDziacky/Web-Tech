@@ -96,6 +96,13 @@ header
   margin-right: 150px;
 }
 
+#results
+{
+  position: relative;
+  bottom: 15rem;
+  font-size: xxx-large;
+}
+
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: #ddd;}
 

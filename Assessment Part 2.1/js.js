@@ -69,14 +69,25 @@
       // finally combine our output list into one string of HTML and put it on the page
       quizContainer.innerHTML = output.join('');
     }
-  
+
     function showResults(){
-  
+
+      //close the timer and assign time points for last question
+      if (timerId) 
+      {     
+        // console.log("timeScoreBonus " + timeLeft);
+        timeScoreBonuses[myQuestions.length] = timeLeft;
+        // console.log(timeScoreBonuses);
+
+        clearInterval(timerId);
+      }
+
       // gather answer containers from our quiz
       const answerContainers = quizContainer.querySelectorAll('.answers');
   
       // keep track of user's answers
       let numCorrect = 0;
+      let scoreTotal = 0;
   
       // for each question...
       myQuestions.forEach( (currentQuestion, questionNumber) => {
@@ -90,7 +101,10 @@
         if(userAnswer === currentQuestion.correctAnswer){
           // add to the number of correct answers
           numCorrect++;
-  
+          console.log("Score bonus for Q" + (questionNumber + 1) + "   " + timeScoreBonuses[(questionNumber + 1)]);
+
+          scoreTotal += (1 + timeScoreBonuses[(questionNumber + 1)]);
+          
           // color the answers green
           answerContainers[questionNumber].style.color = 'lightgreen';
         }
@@ -100,12 +114,36 @@
           answerContainers[questionNumber].style.color = 'red';
         }
       });
-  
+      
       // show number of correct answers out of total
-      resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+      
+      console.log("Score total: " + scoreTotal);
+      resultsContainer.innerHTML = `Your score is: ${scoreTotal} out of ${myQuestions.length * 20}`;
+      previousButton.style.display = "none";
+      submitButton.style.display = "none";
     }
   
     function showSlide(n) {
+
+      // If there is an interval running, stop it, reset the timeLeft var. 
+      
+      if (timerId) 
+      {     
+        console.log("timeScoreBonus " + timeLeft);
+        timeScoreBonuses[n] = timeLeft;
+        console.log(timeScoreBonuses);
+
+        clearInterval(timerId);
+        timeLeft = 20;
+        timerId = setInterval(countdown, 1000);
+      }
+      // If no timer running ,start a new one
+      else
+      {
+        timerId = setInterval(countdown, 1000);
+      }
+
+      // changing slides and button visibility
       slides[currentSlide].classList.remove('active-slide');
       slides[n].classList.add('active-slide');
       currentSlide = n;
@@ -125,9 +163,10 @@
       }
     }
   
-    function showNextSlide() {
+    function showNextSlide() {  
       progress_list[currentSlide].style.textDecoration = "line-through";
       showSlide(currentSlide + 1);
+
     }
   
     function showPreviousSlide() {
@@ -149,6 +188,16 @@
       document.getElementById('continue').style.display = "inline-block";
     }
 
+    function countdown() {
+      if (timeLeft == -1) {
+          clearTimeout(timerId);
+      } 
+      else {
+          console.log(timeLeft + ' seconds remaining');
+          timeLeft--;
+      }
+  }
+
     // after clicking continue button
     function startQuiz()
     {
@@ -160,6 +209,23 @@
     }
   
     // Variables
+
+    var timeScoreBonuses = {
+      1: 0,
+      2: 0,
+      3: 0,
+      4: 0,
+      5: 0,
+      6: 0,
+      7: 0,
+      8: 0,
+      9: 0,
+      10: 0
+    };
+
+    var timeLeft = 20;
+    var timerId;
+    var timeScoreBonus = 0;
     const quizContainer = document.getElementById('quiz');
     const resultsContainer = document.getElementById('results');
     const submitButton = document.getElementById('submit');
@@ -271,7 +337,7 @@
             c: "Anthony Hopkings",
           },
           att_type: "N/A",
-          correctAnswer: "a"
+          correctAnswer: "b"
         }
       ];
   
