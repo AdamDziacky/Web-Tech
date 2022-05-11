@@ -179,7 +179,7 @@
     {
       // Get users name
       username = document.getElementById('name').value;
-      msg = "Hi " + username + ". Do you consider yourself a movie addict / maniac / enthusiast? Many people do but not many of them really are. This is your chance to prove yourself worthy of that nickname. Ahead of you is the series of 10 questions featuring some of most famous movies of all times. The sooner you answer, the more points you get. Are you ready?" 
+      msg = "Hi " + username + ". Do you consider yourself a movie addict / maniac / enthusiast? Many people do but not many of them really are. This is your chance to prove yourself worthy of that nickname. Ahead of you is the series of 10 questions featuring some of most famous movies of all times. The sooner you answer, the more points you get. You have 20 seconds per question to get bonus for fast answer. Are you ready?" 
       document.getElementById('intro').innerHTML = msg;
       
       // Hide the form
