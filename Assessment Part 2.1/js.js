@@ -202,6 +202,7 @@
     function startQuiz()
     {
       showSlide(currentSlide);
+      document.getElementById('page-content').style.display = "block";
       continueButton.style.display = 'none';
       nextButton.style.display = 'inline-block';
       document.getElementById('intro').style.display = 'none';

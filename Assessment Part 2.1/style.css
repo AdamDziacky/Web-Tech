@@ -50,7 +50,7 @@ header
 
 .header-content
 {
-  margin-right: 110px;
+  margin-right: 150px;
 }
 
 .dropbtn 
@@ -165,8 +165,9 @@ h2{
   color: #fff;
 }
 
-.page-content{
+#page-content{
   margin-right: 150px;
+  display: none;
   /* width: 90%; */
 }
 
