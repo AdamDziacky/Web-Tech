@@ -4,13 +4,14 @@
         <meta charset="UTF-8" />
         <title>Assessment Part 2 - Quiz Website</title>
         <link rel="stylesheet" href="style.css">
-        <!-- <script src="test.js"></script> -->
+        <!-- icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     </head>
 
     <body>
         <header id="header">
-            MovieQ
-
+            <!-- Modified from: https://www.w3schools.com/howto/howto_css_dropdown.asp -->
             <div class="dropdown" style="float:right;">
                 <div class="dropbtn"></div>
                 <div class="dropbtn"></div>
@@ -22,16 +23,30 @@
                     <a href="contact.html">Contact</a>
                     <a href="leader.html">Leaderboard</a>
                 </div>
-              </div>
+            </div>
+            <div class="header-content">
+
+                <H1>MovieQ</H1>
+                
+            </div>
         </header>
 
-        <!-- Modified from: https://www.w3schools.com/howto/howto_css_dropdown.asp -->
-            
-        <section>
-            <div class="grid-container">
-                <div class="grid-item"><a href="art1.html">Article 1</a></div>
-                <div class="grid-item"><a href="art2.html">Article 2</a></div>
-                <div class="grid-item"><a href="art3.html">Article 3</a></div>
+        <div class="aside">
+            <aside>
+                <ul id="progress-ul" style="text-align: left; margin-left: 10px;" >
+                    <li class="progress-ul-li">Did you know?</li>
+                    <li class="progress-ul-li">The movie Paranormal Activity is the most profitable film ever.</li>
+                    <li class="progress-ul-li">Its return on the investment was incredible 19 758%!</li>
+                
+            </ul>
+        </aside>
+        </div>
+        
+        <section style="margin-top: 100px;">
+            <div class="grid">
+                <div class="grid-item"><a href="art1.html">The Cult of Jurassic Park</a></div>
+                <div class="grid-item"><a href="art2.html">The Making of Pulp Fiction</a></div>
+                <div class="grid-item"><a href="art3.html">The Godfather Wars</a></div>
             </div>
         </section>
    
@@ -39,7 +54,10 @@
             <script src="JS.js"></script>
             
             <footer>
-                <!-- <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div> -->
+                <a href="social.html" class="fa fa-facebook"></a>
+                <a href="social.html" class="fa fa-twitter"></a>
+                <a href="social.html" class="fa fa-instagram"></a>
+
                 <ul class="list-inline">
                     <li class="list-inline-item"><a href="blog.html">Blog</a></li>
                     <li class="list-inline-item"><a href="about.html">About Me</a></li>
@@ -47,7 +65,7 @@
                     <li class="list-inline-item"><a href="contact.html">Contact</a></li>
                     <li class="list-inline-item"><a href="leader.html">Leaderboard</a></li>
                 </ul>
-                <p class="copyright">Company Name © 2018</p>
+                
             </footer>
         </div>
 
