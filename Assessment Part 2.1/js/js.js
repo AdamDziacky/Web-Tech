@@ -253,7 +253,7 @@
             c: "Gandalf the Grey"
           },
           att_type: "Audio",
-          att: "gandalf_shallnotpass.mp3",
+          att: "attachments/gandalf_shallnotpass.mp3",
           correctAnswer: "c"
         },
         {
@@ -264,7 +264,7 @@
             c: "Illuminati sign",
           },
           att_type: "Image",
-          att: "HP_Pic.jpg",
+          att: "attachments/HP_Pic.jpg",
           correctAnswer: "b"
         },
         {
@@ -285,7 +285,7 @@
             c: "Wilson",
           },
           att_type: "Image",
-          att: "Wilson.jpg",
+          att: "attachments/Wilson.jpg",
           correctAnswer: "c"
         },
         {
@@ -306,7 +306,7 @@
             c: "Auror",
           },
           att_type: "Audio",
-          att: "wizzard.mp3",
+          att: "attachments/wizzard.mp3",
           correctAnswer: "b"
         },
         {
@@ -327,7 +327,7 @@
             c: "Casablanca",
           },
           att_type: "Image",
-          att: "Angry_Men.jpg",
+          att: "attachments/Angry_Men.jpg",
           correctAnswer: "b"
         },
         {
